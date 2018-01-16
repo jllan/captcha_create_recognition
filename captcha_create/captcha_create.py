@@ -16,11 +16,9 @@ def create_captcha_image(chars, width=160, height=70):
     background = random_color(255, 255)
     image = Image.new('RGB', (width, height), background)
     draw = ImageDraw.Draw(image)
-
     images = []
     for c in chars:
         images.append(_draw_character(draw, c))
-
     text_width = sum([im.size[1] for im in images])
     # width2 = max(text_width, width)
     image = image.resize((width, height))
@@ -39,7 +37,7 @@ def create_captcha_image(chars, width=160, height=70):
     image = image.filter(ImageFilter.SMOOTH)
     # image = create_noise_curve(image)
     # image.show()
-    image.save(os.path.join('/home/jlan/WorkSpace/cv/dataset/yzm/', ''.join(chars)+'.jpg'))  # 保存验证码图片
+    # image.save(os.path.join('/home/jlan/WorkSpace/cv/dataset/yzm/', ''.join(chars)+'.jpg'))  # 保存验证码图片
     return image
 
 
@@ -103,6 +101,7 @@ def random_color(start, end, opacity=None):
     if opacity is None:
         return (red, green, blue)
     return (red, green, blue, opacity)
+
 
 def main():
     start = time.time()
