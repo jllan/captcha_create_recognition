@@ -154,8 +154,9 @@ def evaluate_from_gen(model, batch_num=1):
 
 if __name__ == '__main__':
     X, y = prepare_data(pic_dir = '../../dataset/court')
-    # model = gen_model()
-    # train(model, X, y)
-    model = load_model('captcha_cnn.h5')
-    # print(evaluate(model, X[:100], np.array(y)[:, :100]))
-    test_from_file(model, pic_dir = '../../dataset/court')
+    model = gen_model()
+    train(model, X, y)
+    X_test, y_test = prepare_data(pic_dir='../../dataset/test')
+    # model = load_model('captcha_cnn.h5')
+    print(evaluate(model, X_test, np.array(y_test)))
+    # test_from_file(model, pic_dir = '../../dataset/court')
