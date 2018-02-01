@@ -6,3 +6,7 @@
 - captcha_recognition_keras
 基于keras实现验证码识别
 参考https://github.com/ypwhs/captcha_break
+
+- captcha_recognition_pytorch
+基于pytorch的端到端的不定长验证码识别
+参考https://github.com/airaria/CaptchaRecognition
